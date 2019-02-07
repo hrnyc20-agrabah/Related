@@ -1,0 +1,173 @@
+CREATE TABLE IF NOT EXISTS Element (
+category INT NOT NULL,
+comment_count INT NULL,
+extra VARCHAR(13) NULL,
+id VARCHAR(24) NULL,
+left INT NULL,
+picture VARCHAR(68) NULL,
+price INT NULL,
+rating INT NULL,
+sold INT NULL,
+title VARCHAR(13) NULL,
+foreign key (category) REFERENCES categories (id)
+);
+
+
+Create table categories (
+    id INT NOT NULL, 
+    title VARCHAR (255)
+    Primary key (id)
+);
+
+Create table USER (
+    id INT NOT NULL, 
+    Name VARCHAR (255)
+    Primary key (id)
+); 
+
+Create table Liked_elements (
+    element_id INT, 
+    users_id Int, 
+    FOREIGN key (element_id) REFERENCES (id) Element,
+    FOREIGN key (users_id) REFERENCES (id) USER
+);
+
+Create table Saved_elements (
+    element_id INT, 
+    users_id Int, 
+    FOREIGN key (element_id) REFERENCES (id) Element,
+    FOREIGN key (users_id) REFERENCES (id) USER
+);
+
+
+Insert into categories VALUES
+(1, ‘Tech’), (2, ‘Audio’) , (3, ‘Everyday’) , (4, ‘Blades’),  (5, ’Keyboards’); 
+
+
+INSERT INTO Element VALUES
+(2,37,"amet","5c5b18fd880a36c94c037f92",10,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/009.jpg",31,4,29,"Sun"),
+(1,29,"consectetur","5c5b18fd3c32564d1279a0ba",18,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/001.jpg",25,3,21,"Mad"),
+(1,29,"qui","5c5b18fd3c9c568947f55efc",14,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/002.jpg",34,1,21,"Nostrud"),
+(4,39,"deserunt","5c5b18fdbb65ada14e7bc9b3",18,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",39,5,31,"Minim"),
+(2,23,"proident","5c5b18fdc8ae62a2cd30775b",14,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/012.jpg",32,4,38,"Quilley"),
+(5,38,"consequat","5c5b18fd251fcc6e848a2074",13,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/020.jpg",22,5,28,"Molliter"),
+(1,23,"quis","5c5b18fd2f4d3330b522cbc3",11,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/003.jpg",25,2,34,"Reprehenderit");
+
+INSERT INTO Element VALUES
+(4,38,"laborum","5c5b18fd4aaa300847f136b9",19,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",25,5,23,"Deserunt"),
+(4,40,"ea","5c5b18fd54f16564ccfcc41f",13,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",36,5,31,"Tyerlte"),
+(3,38,"non","5c5b18fdda2080886508a1f5",20,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",27,2,25,"Tupidatat"),
+(3,39,"Lorem","5c5b18fdfc796183ec075d54",17,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",40,3,30,"Laborum"),
+(4,35,"incididunt","5c5b18fd78da08c1fb506096",10,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",25,4,25,"Hyedn"),
+(5,39,"enim","5c5b18fd2986ffb7e1a3e18a",14,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",30,4,27,"Commodo"),
+(1,22,"exercitation","5c5b18fd9ac6c493f959c8e5",18,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/004.jpg",20,1,40,"Mollit");
+
+INSERT INTO Element VALUES
+(2,26,"minim","5c5b18fdd5500a36b66f3ee4",11,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/013.jpg",33,4,32,"Yedinim"),
+(1,37,"sit","5c5b18fd275bdd68e489b789",18,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/005.jpg",24,2,31,"RPoit"),
+(2,27,"sint","5c5b18fdde2464099996b23c",13,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/021.jpg",37,2,38,"Aliquip"),
+(2,35,"commodo","5c5b18fdad473317308a4199",17,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/022.jpg",25,4,32,"Esse"),
+(5,26,"occaecat","5c5b18fd0dcb5fc6d89d4b96",20,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",32,3,25,"Toiuyt"),
+(1,22,"veniam","5c5b18fd488ca99a4e06a1a6",17,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/006.jpg",26,1,20,"Hint"),
+(4,20,"dolor","5c5b18fd81766aae9d7bd43a",12,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",33,4,27,"Gaboris");
+
+INSERT INTO Element VALUES
+(2,40,"enim","5c5b18fdda40fe1cf582eb5f",13,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/042.jpg",36,1,40,"Sint"),
+(3,34,"velit","5c5b18fd2d21ac419514f65c",15,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",33,2,27,"Gyeisi"),
+(2,26,"cillum","5c5b18fd302a41294f8514d4",20,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/046.jpg",38,4,27,"Lulla"),
+(4,25,"culpa","5c5b18fdc55eba5c01e2bd6a",20,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",37,5,34,"Tnim"),
+(5,29,"elit","5c5b18fd8031ee33fff3e420",19,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",31,5,35,"Ediusmod"),
+(1,38,"ad","5c5b18fdbb1884de3a14557a",14,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/007.jpg",37,1,34,"Dolore"),
+(4,21,"eu","5c5b18fdfcec88bde490e07a",17,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",40,5,21,"Dempor"),
+(3,25,"reprehenderit","5c5b18fdc232955981eb1e74",17,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",30,5,36,"Dyllamco"),
+(4,20,"minim","5c5b18fdf44a52ac32651a1a",17,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",36,3,26,"Poluptate");
+
+INSERT INTO Element VALUES
+(4,24,"mollit","5c5b18fd9b3ad4dc6ec5a7aa",10,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",23,4,26,"Veniam"),
+(5,25,"excepteur","5c5b18fd2f7e034e0cb4f8b2",17,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",29,2,35,"Unisi"),
+(4,27,"tempor","5c5b18fdc37beae5a35c9b3b",20,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",40,3,27,"Thytre"),
+(3,32,"veniam","5c5b18fdc2199d55772f86e7",11,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",26,3,28,"Aliqua"),
+(1,34,"ex","5c5b18fda6641e325afa0bd3",13,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/008.jpg",32,5,40,"Auqarop"),
+(3,28,"pariatur","5c5b18fdfe41e02ede942262",10,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",32,3,35,"Hisi"),
+(5,22,"et","5c5b18fda504b70f72ed2c1e",16,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",24,4,25,"Lorem");
+
+INSERT INTO Element VALUES
+(3,29,"officia","5c5b18fd5d0e0c9e0d47bd80",15,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",32,1,36,"Luna"),
+(4,20,"est","5c5b18fd0b298dda1928e9ae",16,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",37,2,20,"Mars"),
+(1,39,"cupidatat","5c5b18fd5bbe4e0e40e01c70",20,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/009.jpg",20,5,28,"Venus"),
+(4,33,"dolore","5c5b18fd7d9316087eaa973c",14,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",32,3,31,"Uranus"),
+(5,39,"ullamco","5c5b18fdb5032b8fe6b88ead",18,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",40,2,27,"Mercury"),
+(1,25,"deserunt","5c5b18fd9f717c29964d64ec",17,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/010.jpg",21,3,31,"Pluto"),
+(1,31,"qui","5c5b18fdd5f6d0a3c17bf75d",10,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/011.jpg",27,4,27,"Earth"),
+(3,23,"ex","5c5b18fdc3d5f31de03057ee",13,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",20,3,30,"Europa");
+
+INSERT INTO Element VALUES
+(1,22,"non","5c5b18fdfe03b729879ac5f9",10,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/012.jpg",23,5,36,"Titanus"),
+(2,31,"Lorem","5c5b18fd9244764a66c70f3d",19,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/048.jpg",23,2,32,"Neptune"),
+(4,27,"magna","5c5b18fd3c9b5232a1d8321b",13,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",23,1,21,"Encladus"),
+(3,27,"amet","5c5b18fdcc4a7e042e9f7184",11,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",27,1,25,"Diaone"),
+(1,20,"commodo","5c5b18fd8b7068f3048a4d15",10,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/016.jpg",26,2,34,"Mimas"),
+(5,38,"ipsum","5c5b18fd132cc0d8cc46f901",17,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",34,2,29,"Tethys"),
+(4,28,"officia","5c5b18fd5ed27c6974a63801",16,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",32,5,37,"Lapetus"),
+(5,37,"sunt","5c5b18fda3c01f7293904cdb",15,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",26,5,24,"Rhea");
+
+INSERT INTO Element VALUES
+(2,22,"dolore","5c5b18fd72abfc56f9b82100",13,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/055.jpg",35,2,29,"Hyperion"),
+(1,32,"exercitation","5c5b18fdaf64ffecb5a7b8f1",11,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/017.jpg",40,3,27,"Epimetheus"),
+(2,27,"eu","5c5b18fd47bd0379042ee044",13,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/064.jpg",36,4,34,"Phoebe"),
+(2,20,"eiusmod","5c5b18fd6f62bcb1be8b1991",11,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/067.jpg",24,3,22,"Telesto"),
+(4,39,"minim","5c5b18fd935634f293fd4ddc",17,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",27,2,32,"Janus"),
+(5,39,"magna","5c5b18fd115526968b4fcb43",12,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",26,4,34,"Pan"),
+(1,31,"reprehenderit","5c5b18fd72c67d43a6c5de4b",14,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/018.jpg",29,2,28,"AtlasElement");
+
+INSERT INTO Element VALUES
+(3,20,"reprehenderit","5c5b18fd04f0afc88285f155",10,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",40,4,26,"Daphnis"),
+(2,40,"ad","5c5b18fd7b16e00046e05287",15,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/069.jpg",30,2,22,"Kivique"),
+(2,25,"mollit","5c5b18fde6a67281835d398c",11,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/070.jpg",37,1,23,"Erriapus"),
+(1,33,"pariatur","5c5b18fdef3e942637aaa873",18,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/019.jpg",33,2,36,"Paaliaq"),
+(3,37,"commodo","5c5b18fde751a2d14042e21a",17,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",25,1,20,"Ljiraq"),
+(1,23,"dolore","5c5b18fdaa155cd31f516ee0",18,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/020.jpg",40,1,24,"Albonix"),
+(5,25,"nisi","5c5b18fd84089a0540622256",10,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",20,5,25,"Pallene"),
+(2,27,"irure","5c5b18fda353fa7787483681",20,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/071.jpg",30,2,34,"Siarnaq");
+
+INSERT INTO Element VALUES
+(1,22,"non","5c5b18fda85aac09204575ec",11,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/027.jpg",24,2,31,"Pandora"),
+(4,21,"voluptate","5c5b18fdadcd8a302748adaf",10,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",25,5,25,"Methone"),
+(5,37,"qui","5c5b18fd248e433f2b987104",19,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",33,4,35,"Ymir"),
+(5,25,"aliquip","5c5b18fd96f8580c1627d04a",13,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",24,2,28,"Tarvos"),
+(3,27,"pariatur","5c5b18fd9811622ef6fcda28",12,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",39,3,34,"Mundilfari"),
+(4,30,"aliquip","5c5b18fd4edec39c2a827ba6",19,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",20,3,37,"Anthe"),
+(1,23,"consequat","5c5b18fddc699fc4633b23a6",20,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/028.jpg",34,1,27,"Narvi"),
+(3,37,"reprehenderit","5c5b18fd318bd19f20a40e07",12,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",38,2,31,"Laborum");
+
+INSERT INTO Element VALUES
+(3,35,"deserunt","5c5b18fdfae678ce2af674d5",20,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",32,4,40,"Hati"),
+(4,33,"anim","5c5b18fd3d701354020e663b",10,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",22,2,30,"Helene"),
+(1,39,"sit","5c5b18fda9752c28a608ad03",20,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/029.jpg",36,1,36,"Bebnion"),
+(2,35,"minim","5c5b18fdccda21c6707cbf4a",10,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/072.jpg",32,2,25,"Fenrir"),
+(5,24,"amet","5c5b18fd670498e51bdd3ab3",16,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",26,1,23,"Prometheus"),
+(5,27,"nostrud","5c5b18fdb22a68b2bec906ac",20,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",22,1,34,"Tarqeq"),
+(5,25,"consequat","5c5b18fd9ce3fb13ad7f18d4",16,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",31,1,29,"Aegaeon");
+
+INSERT INTO Element VALUES
+(1,30,"laboris","5c5b18fd7444a6cf77156fec",19,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/030.jpg",22,5,31,"Thrymr"),
+(4,39,"cillum","5c5b18fd92127c58d44f26f7",16,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",20,4,32,"Nulla"),
+(2,20,"cupidatat","5c5b18fd04aad2e2907def80",15,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/078.jpg",40,4,20,"Fornjot"),
+(5,22,"sunt","5c5b18fdad087d6e7240d791",10,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",34,3,22,"Aegir"),
+(2,32,"in","5c5b18fdffcd9984c621eedc",14,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/084.jpg",29,3,28,"Skathi"),
+(2,33,"in","5c5b18fd29fac06c93daf8c4",16,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/097.jpg",40,3,25,"Bestla"),
+(1,28,"pariatur","5c5b18fd594a270ab2c84a84",20,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/033.jpg",35,3,40,"Enim");
+
+INSERT INTO Element VALUES
+(3,23,"ipsum","5c5b18fd991ad60350695f03",17,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",37,5,30,"Saboris"),
+(4,33,"enim","5c5b18fd7e75367df38a8ef9",12,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",28,3,34,"Jarnaxa"),
+(4,23,"et","5c5b18fdbd2a5a9e5a2ab27a",20,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",35,5,29,"Calypso"),
+(5,28,"aliquip","5c5b18fd8a72a9e214f70468",10,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",36,2,31,"Excepteur"),
+(1,37,"adipisicing","5c5b18fd1125e780f2c4293a",13,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/035.jpg",22,1,30,"Loge"),
+(5,22,"ea","5c5b18fd7480770f8bc88e57",18,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",29,4,21,"quis"),
+(3,33,"amet","5c5b18fd34b7dbc575006572",10,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",20,4,28,"Quis");
+
+INSERT INTO Element VALUES
+(5,23,"enim","5c5b18fd115274ed2f8ce18e",14,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",29,1,26,"Eu"),
+(4,24,"est","5c5b18fd27022f22636b4cb5",17,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/014.jpg",33,3,31,"Deserunt"),
+(2,27,"est","5c5b18fdb570aa14f5988e08",11,"https://s3.us-east-2.amazonaws.com/fec02052019/Pictures/pics/101.jpg",27,5,40,"Aliquip");
