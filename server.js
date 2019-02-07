@@ -6,7 +6,7 @@ const port = process.env.PORT || 3006;
 let app = express();
 
 const db = new sqlite3.Database('./data.db', (err) => {
-    if(err) console.log('Somwthing went wrong with connecting to the db', err)
+    if(err) console.log('Something went wrong with connecting to the db', err)
     console.log('connected to the db')
 }); 
 
