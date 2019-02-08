@@ -6,14 +6,14 @@ const port = process.env.PORT || 3006;
 let app = express();
 
 const db = new sqlite3.Database('./data.db', (err) => {
-    if(err) console.log(err)
+    if(err) console.log('Something went wrong with connecting to the db', err)
     console.log('connected to the db')
-})
+}); 
 
 const router = express.Router();
-app.use(router)
-app.use(express.static(__dirname))
-app.use(bodyParser.json())
+app.use(router);
+app.use(express.static(__dirname));
+app.use(bodyParser.json());
 
 router.get(`/buy/:title/related/firstEight`, (req, res)=> {
     const title = req.params.title
@@ -21,7 +21,7 @@ router.get(`/buy/:title/related/firstEight`, (req, res)=> {
         if(err) console.log('Something went wrong with getting 8 related items [/related/first8] @ server.js',err)
 
         res.json(data).status(200) 
-        console.log('first 8 related items successfully found')
+        console.log('first 8 related items successfully found');
     })
 })
 
@@ -31,7 +31,7 @@ router.get(`/buy/:title/related/all`, (req, res)=> {
         if(err) console.log('Something went wrong with getting all related items [/related/all] @ server.js',err)
 
         res.json(data).status(200)
-        console.log('all related items successfully found')
+        console.log('all related items successfully found');
     })
 })
 
@@ -40,7 +40,7 @@ router.get(`/buy/:title/like_item`, (req, res) => {
     db.get(`insert into  liked_elements (element_id) select id from element where title = "${title}"`, (err, data) => {
         if(err) console.log('Something went wrong with LIKE [router.get/like_item @ server.js]', err)
 
-        res.send('Liked! Yay ^^').status(201)
+        res.send('Liked! Yay ^^').status(201);
     })
 })
 
